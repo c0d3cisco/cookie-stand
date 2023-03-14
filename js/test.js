@@ -9,35 +9,66 @@ function CitySales(cityName, minCustomers, maxCustomers, avgCookieSaleHour, targ
   this.totalCookies = 0;
 }
 
-CitySales.prototype.hourlyListAndTotalPrint = function(){
-  const hourArrayString = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ', 'Total: ']; //sets the string of the message and the total hours of the day in an array. Can be automated for user to adjust hours, but needed to hard code for now.
+// CitySales.prototype.hourlyListAndTotalPrint = function(){
+//   const hourArrayString = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ', 'Total: ']; //sets the string of the message and the total hours of the day in an array. Can be automated for user to adjust hours, but needed to hard code for now.
 
-  for (let i = 0; i < hourArrayString.length - 1; i++) {
+//   for (let i = 0; i < 14; i++) {
+//     let randomHourly = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer; // random function from https://www.w3schools.com/js/js_random.asp
+//     console.log(randomHourly);
+//     let randomHourlySale = Math.ceil(randomHourly * this.avgCookieSaleHour);
+//     this.totalSales = this.totalSales + randomHourlySale;
+//     this.hourlySale.push(hourArrayString[i] + randomHourlySale + ' cookies'); //recommend to Math.ceil to always round up. Better to have one extra cookie than one too few cookies.
+//   }
+//   console.log(14);
+//   this.hourlySale.push(hourArrayString[14] + this.totalSales + ' cookies');
+
+//   let printArray = this.hourlySale;
+//   let elementID = this.targetElement;
+//   let hourlyList = document.getElementById(elementID);
+
+//   //   creating title
+//   let h2Element = document.createElement('h2');
+//   h2Element.textContent = this.cityName;
+//   console.log(h2Element);
+//   hourlyList.appendChild(h2Element);
+
+//   //   creating list
+//   for (let i = 0; i < printArray.length; i++) { // prints numbers
+//     let liElement = document.createElement('li');
+//     liElement.textContent = printArray[i];
+//     hourlyList.appendChild(liElement);
+//   }
+
+
+
+
+
+CitySales.prototype.hourlyListAndTotalPrint1 = function() {
+
+  for (let i = 0; i < 14; i++) {
     let randomHourly = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer; // random function from https://www.w3schools.com/js/js_random.asp
-    console.log(randomHourly);
     let randomHourlySale = Math.ceil(randomHourly * this.avgCookieSaleHour);
-    this.totalSales = this.totalSales + randomHourlySale;
-    this.hourlySale.push(hourArrayString[i] + randomHourlySale + ' cookies'); //recommend to Math.ceil to always round up. Better to have one extra cookie than one too few cookies.
+    this.hourlySale.push(randomHourlySale); //recommend to Math.ceil to always round up. Better to have one extra cookie than one too few cookies.
+    this.totalSales += randomHourlySale;
   }
-  console.log(hourArrayString[hourArrayString.length - 1]);
-  this.hourlySale.push(hourArrayString[hourArrayString.length - 1] + this.totalSales + ' cookies');
+  this.hourlySale.push(this.totalSales);
+  let fullArray = this.hourlySale.shift(this.cityName);
 
-  let printArray = this.hourlySale;
-  let elementID = this.targetElement;
-  let hourlyList = document.getElementById(elementID);
 
-  //   creating title
-  let h2Element = document.createElement('h2');
-  h2Element.textContent = this.cityName;
-  console.log(h2Element);
-  hourlyList.appendChild(h2Element);
+  let tBodyElement = document.getElementsByName('tbody');
+  let trElement = document.createElement('tr');
+  tBodyElement.appendChild(trElement);
 
-  //   creating list
-  for (let i = 0; i < printArray.length; i++) { // prints numbers
-    let liElement = document.createElement('li');
-    liElement.textContent = printArray[i];
-    hourlyList.appendChild(liElement);
+  for (let i = 0; i < fullArray.length; i++) { // prints numbers
+    let tdElement = document.createElement('td');
+    tdElement.textContent = fullArray[i];
+    trElement.appendChild(tdElement);
   }
+
+
+
+
+
 };
 
 //[city, min/cust, max/cust, avg/sales]

@@ -1,59 +1,75 @@
-function CitySales(cityName, minCustomer, maxCustomer, avgCookieSaleHour, targetElement) {
+function CitySales(cityName, minCustomer, maxCustomer, avgCookieSaleHour) {
   this.cityName = cityName;
   this.minCustomer = minCustomer;
   this.maxCustomer = maxCustomer;
   this.avgCookieSaleHour = avgCookieSaleHour;
-  this.targetElement = targetElement;
   this.hourlySale = [];
   this.totalSales= 0;
 }
 
-CitySales.prototype.hourlyListAndTotalPrint = function(){
-  const hourArrayString = ['6am: ','7am: ','8am: ','9am: ','10am: ','11am: ','12pm: ','1pm: ','2pm: ','3pm: ','4pm: ','5pm: ','6pm: ', '7pm: ', 'Total: ']; //sets the string of the message and the total hours of the day in an array. Can be automated for user to adjust hours, but needed to hard code for now.
+CitySales.prototype.hourlyListAndTotalPrint = function() {
 
-  for (let i = 0; i < hourArrayString.length - 1; i++) {
+  for (let i = 0; i < 15; i++) {
     let randomHourly = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer; // random function from https://www.w3schools.com/js/js_random.asp
-    console.log(randomHourly);
     let randomHourlySale = Math.ceil(randomHourly * this.avgCookieSaleHour);
-    this.totalSales = this.totalSales + randomHourlySale;
-    this.hourlySale.push(hourArrayString[i] + randomHourlySale + ' cookies'); //recommend to Math.ceil to always round up. Better to have one extra cookie than one too few cookies.
+    this.hourlySale.push(randomHourlySale); //recommend to Math.ceil to always round up. Better to have one extra cookie than one too few cookies.
+    this.totalSales += randomHourlySale;
   }
-  console.log(hourArrayString[hourArrayString.length - 1]);
-  this.hourlySale.push(hourArrayString[hourArrayString.length - 1] + this.totalSales + ' cookies');
+  this.hourlySale.push(this.totalSales);
+  this.hourlySale.shift(this.cityName);
 
-  let printArray = this.hourlySale;
-  let elementID = this.targetElement;
-  let hourlyList = document.getElementById(elementID);
-
-  //   creating title
-  let h2Element = document.createElement('h2');
-  h2Element.textContent = this.cityName;
-  console.log(h2Element);
-  hourlyList.appendChild(h2Element);
-
-  //   creating list
-  for (let i = 0; i < printArray.length; i++) { // prints numbers
-    let liElement = document.createElement('li');
-    liElement.textContent = printArray[i];
-    hourlyList.appendChild(liElement);
+  // this sets parent element for the table details
+  let tBodyElement = document.getElementById('tbodyTest');
+  //console.log(this.hourlySale);
+  let trElement = document.createElement('tr');
+  tBodyElement.appendChild(trElement);
+  // this sets the table row of cities
+  let tdElement = document.createElement('td');
+  trElement.appendChild(tdElement);
+  tdElement.textContent = this.cityName;;
+  // this sets up all numerical values, including the total sales at the end
+  for (let i = 0; i < this.hourlySale.length; i++) { // prints numbers
+    let tdElement = document.createElement('td');
+    trElement.appendChild(tdElement);
+    tdElement.textContent = this.hourlySale[i];
   }
 };
+let cityObjArr = [];
+cityObjArr[0] = new CitySales('Seattle', 23, 65, 6.3);
+cityObjArr[1] = new CitySales('Tokyo', 3, 24, 1.2);
+cityObjArr[2] = new CitySales('Dubai', 11, 38, 3.7);
+cityObjArr[3] = new CitySales('Paris', 20, 38, 6.3);
+cityObjArr[4] = new CitySales('Lima', 2, 65, 6.3);
 
-//[city, min/cust, max/cust, avg/sales]
-// ['Seattle', 23, 65, 6.3, 'city-1'],
-// ['Tokyo', 3, 24, 1.2, 'city-2'],
-// ['Dubai', 11, 38, 3.7, 'city-3'],
-// ['Paris', 20, 38, 6.3, 'city-4'],
-// ['Lima', 2, 65, 6.3, 'city-5'],
+for (let i = 0; i < cityObjArr.length; i++) {
+  cityObjArr[i].hourlyListAndTotalPrint();
+}
 
-let seattle = new CitySales('Seattle', 23, 65, 6.3, 'city-1');
-let tokyo = new CitySales('Tokyo', 3, 24, 1.2, 'city-2');
-let dubai = new CitySales('Dubai', 11, 38, 3.7, 'city-3');
-let paris = new CitySales('Paris', 20, 38, 6.3, 'city-4');
-let lima = new CitySales('Lima', 2, 65, 6.3, 'city-5');
 
-seattle.hourlyListAndTotalPrint();
-tokyo.hourlyListAndTotalPrint();
-dubai.hourlyListAndTotalPrint();
-paris.hourlyListAndTotalPrint();
-lima.hourlyListAndTotalPrint();
+function totalRow(cityObject){
+
+  let totalRow = [];
+  for (let i = 0; i < cityObject[0].hourlySale.length; i++) {
+    let totalColumn = 0;
+    for (let j = 0; j < cityObject.length; j++) {
+      totalColumn += cityObject[j].hourlySale[i];
+    }
+    totalRow.push(totalColumn);
+  }
+
+  let tBodyElement = document.getElementById('tbodyTest');
+  let trElement = document.createElement('tr');
+  tBodyElement.appendChild(trElement);
+  // this sets the table row of the total
+  let tdElement = document.createElement('td');
+  trElement.appendChild(tdElement);
+  tdElement.textContent = 'Total';
+  // this sets up all numerical values, including the total sales at the end
+  for (let i = 0; i < totalRow.length; i++) { // prints numbers
+    let tdElement = document.createElement('td');
+    trElement.appendChild(tdElement);
+    tdElement.textContent = totalRow[i];
+  }
+}
+
+totalRow(cityObjArr);
