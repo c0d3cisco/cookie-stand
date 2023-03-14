@@ -8,27 +8,29 @@ function CitySales(cityName, minCustomer, maxCustomer, avgCookieSaleHour) {
 }
 
 CitySales.prototype.hourlyListAndTotalPrint = function() {
+  let controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.00, 0.7, 0.4, 0.6, 0.9, 0.68, 0.5, 0.3, 0.45];
+  for (let i = 0; i < controlCurve.length; i++) {
 
-  for (let i = 0; i < 15; i++) {
     let randomHourly = Math.floor(Math.random() * (this.maxCustomer - this.minCustomer + 1)) + this.minCustomer; // random function from https://www.w3schools.com/js/js_random.asp
-    let randomHourlySale = Math.ceil(randomHourly * this.avgCookieSaleHour);
+
+    let randomHourlySale = Math.ceil(randomHourly * this.avgCookieSaleHour * controlCurve[i]);
     this.hourlySale.push(randomHourlySale); //recommend to Math.ceil to always round up. Better to have one extra cookie than one too few cookies.
     this.totalSales += randomHourlySale;
   }
   this.hourlySale.push(this.totalSales);
-  this.hourlySale.shift(this.cityName);
+  this.hourlySale.unshift(this.cityName);
 
   // this sets parent element for the table details
-  let tBodyElement = document.getElementById('tbodyTest');
+  let tBodyElement = document.getElementById('tbodyID');
   //console.log(this.hourlySale);
   let trElement = document.createElement('tr');
   tBodyElement.appendChild(trElement);
   // this sets the table row of cities
   let tdElement = document.createElement('td');
   trElement.appendChild(tdElement);
-  tdElement.textContent = this.cityName;;
+  tdElement.textContent = this.cityName;
   // this sets up all numerical values, including the total sales at the end
-  for (let i = 0; i < this.hourlySale.length; i++) { // prints numbers
+  for (let i = 1; i < this.hourlySale.length; i++) { // prints numbers
     let tdElement = document.createElement('td');
     trElement.appendChild(tdElement);
     tdElement.textContent = this.hourlySale[i];
@@ -57,7 +59,7 @@ function totalRow(cityObject){
     totalRow.push(totalColumn);
   }
 
-  let tBodyElement = document.getElementById('tbodyTest');
+  let tBodyElement = document.getElementById('tfootID');
   let trElement = document.createElement('tr');
   tBodyElement.appendChild(trElement);
   // this sets the table row of the total
@@ -65,7 +67,7 @@ function totalRow(cityObject){
   trElement.appendChild(tdElement);
   tdElement.textContent = 'Total';
   // this sets up all numerical values, including the total sales at the end
-  for (let i = 0; i < totalRow.length; i++) { // prints numbers
+  for (let i = 1; i < totalRow.length; i++) { // prints numbers
     let tdElement = document.createElement('td');
     trElement.appendChild(tdElement);
     tdElement.textContent = totalRow[i];
