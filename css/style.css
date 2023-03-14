@@ -12,25 +12,46 @@ h1{
     text-align: center;
 }
 
-h2{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.25em;
-    font-weight: bolder;
-    margin-bottom: 10px;
-    color: rgb(44, 28, 65)
+table {
+    text-align: center;
 }
 
-main{
+th, td { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(35, 78, 30);
+    font-size: 12px;
+    padding: 3px;
+    background-color: rgb(255, 241, 215);
+    border: 1px dotted rgb(32, 27, 62);
+
+}
+
+tfoot td{
+    font-weight:bold;
+}
+
+th, tbody td:first-of-type{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.15em;
+    font-weight: bolder;
+    color: rgb(44, 28, 65);
+}
+tfoot td:first-of-type, #thSalesTotal{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 241, 215);
+    background-color: rgb(32, 27, 62);
+    font-weight: bolder;
+    font-size: 1.25em;
+}
+
+#tfootSales td:last-of-type {
+    color: rgb(255, 241, 215);
+    background-color: rgb(32, 27, 62);
+}
+
+/* main{
     display: flex;
     justify-content: center;
     text-align: right;
-}
+} */
 
-main ul{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:rgb(35, 78, 30);
-    background-color: rgb(255, 241, 215);
-    border: 1px dotted rgb(27, 43, 62);
-    margin: 10px;
-    padding: 5px 20px;
-}
