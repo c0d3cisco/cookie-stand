@@ -4,10 +4,11 @@ function CitySales(cityName, minCustomer, maxCustomer, avgCookieSaleHour) {
   this.maxCustomer = maxCustomer;
   this.avgCookieSaleHour = avgCookieSaleHour;
   this.hourlySale = [];
-  this.totalSales= 0;
+  this.hourlyEmployee = [];
+  this.totalSales = 0;
 }
 
-CitySales.prototype.hourlyListAndTotalPrint = function() {
+CitySales.prototype.hourlyListAndTotalPrint = function () {
   let controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.00, 0.7, 0.4, 0.6, 0.9, 0.68, 0.5, 0.3, 0.45];
   for (let i = 0; i < controlCurve.length; i++) {
 
@@ -15,26 +16,50 @@ CitySales.prototype.hourlyListAndTotalPrint = function() {
 
     let randomHourlySale = Math.ceil(randomHourly * this.avgCookieSaleHour * controlCurve[i]);
     this.hourlySale.push(randomHourlySale); //recommend to Math.ceil to always round up. Better to have one extra cookie than one too few cookies.
+
+    let employeeNeededHourly = Math.round(this.hourlySale[i] / 20); //adjust depending on rounding
+    if (employeeNeededHourly < 2) {
+      employeeNeededHourly = 2;
+    }
+
+    this.hourlyEmployee.push(employeeNeededHourly);
     this.totalSales += randomHourlySale;
   }
   this.hourlySale.push(this.totalSales);
   this.hourlySale.unshift(this.cityName);
 
   // this sets parent element for the table details
-  let tBodyElement = document.getElementById('tbodyID');
+  let tBodySalesEl = document.getElementById('tbodySales');
+  let tBodyEmployeeEl = document.getElementById('tbodyEmployee');
   //console.log(this.hourlySale);
-  let trElement = document.createElement('tr');
-  tBodyElement.appendChild(trElement);
+  let trSalesEl = document.createElement('tr');
+  tBodySalesEl.appendChild(trSalesEl);
+
+  let trEmployeeEl = document.createElement('tr');
+  tBodyEmployeeEl.appendChild(trEmployeeEl);
   // this sets the table row of cities
-  let tdElement = document.createElement('td');
-  trElement.appendChild(tdElement);
-  tdElement.textContent = this.cityName;
+  let tdSalesEl = document.createElement('td');
+  trSalesEl.appendChild(tdSalesEl);
+  tdSalesEl.textContent = this.cityName;
+
+  let tdEmployeeEl = document.createElement('td');
+  trEmployeeEl.appendChild(tdEmployeeEl);
+  tdEmployeeEl.textContent = this.cityName;
   // this sets up all numerical values, including the total sales at the end
   for (let i = 1; i < this.hourlySale.length; i++) { // prints numbers
-    let tdElement = document.createElement('td');
-    trElement.appendChild(tdElement);
-    tdElement.textContent = this.hourlySale[i];
+    let tdSalesEl = document.createElement('td');
+    trSalesEl.appendChild(tdSalesEl);
+    tdSalesEl.textContent = this.hourlySale[i];
   }
+  for (let i = 0; i < this.hourlyEmployee.length; i++) { // prints numbers
+    let tdEmployeeEl = document.createElement('td');
+    trEmployeeEl.appendChild(tdEmployeeEl);
+    tdEmployeeEl.textContent = this.hourlyEmployee[i];
+  }
+
+
+
+
 };
 let cityObjArr = [];
 cityObjArr[0] = new CitySales('Seattle', 23, 65, 6.3);
@@ -48,18 +73,18 @@ for (let i = 0; i < cityObjArr.length; i++) {
 }
 
 
-function totalRow(cityObject){
+function totalRowPrint(cityObject) {
 
-  let totalRow = [];
+  let totalRowSales = [];
   for (let i = 0; i < cityObject[0].hourlySale.length; i++) {
     let totalColumn = 0;
     for (let j = 0; j < cityObject.length; j++) {
       totalColumn += cityObject[j].hourlySale[i];
     }
-    totalRow.push(totalColumn);
+    totalRowSales.push(totalColumn);
   }
 
-  let tBodyElement = document.getElementById('tfootID');
+  let tBodyElement = document.getElementById('tfootSales');
   let trElement = document.createElement('tr');
   tBodyElement.appendChild(trElement);
   // this sets the table row of the total
@@ -67,11 +92,46 @@ function totalRow(cityObject){
   trElement.appendChild(tdElement);
   tdElement.textContent = 'Total';
   // this sets up all numerical values, including the total sales at the end
-  for (let i = 1; i < totalRow.length; i++) { // prints numbers
+  totalRowSales[0] = 'Total';
+  for (let i = 1; i < totalRowSales.length; i++) { // prints numbers
     let tdElement = document.createElement('td');
     trElement.appendChild(tdElement);
-    tdElement.textContent = totalRow[i];
+    tdElement.textContent = totalRowSales[i];
   }
+
+  let totalRowEmployee = [];
+  for (let i = 0; i < cityObject[0].hourlyEmployee.length; i++) {
+    let totalColumn = 0;
+    for (let j = 0; j < cityObject.length; j++) {
+      totalColumn += cityObject[j].hourlyEmployee[i];
+    }
+    totalRowEmployee.push(totalColumn);
+  }
+
+  tBodyElement = document.getElementById('tfootEmployee');
+  trElement = document.createElement('tr');
+  tBodyElement.appendChild(trElement);
+  // this sets the table row of the total
+  tdElement = document.createElement('td');
+  trElement.appendChild(tdElement);
+  tdElement.textContent = 'Total';
+  // this sets up all numerical values, including the total sales at the end
+  for (let i = 0; i < totalRowEmployee.length; i++) { // prints numbers
+    let tdElement = document.createElement('td');
+    trElement.appendChild(tdElement);
+    tdElement.textContent = totalRowEmployee[i];
+  }
+
+
+  //
+
+  return totalRowSales;
+
+
 }
 
-totalRow(cityObjArr);
+
+totalRowPrint(cityObjArr);
+
+
+

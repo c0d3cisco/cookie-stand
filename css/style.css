@@ -36,7 +36,7 @@ th, tbody td:first-of-type{
     font-weight: bolder;
     color: rgb(44, 28, 65);
 }
-tfoot td:first-of-type, thead th:last-of-type{
+tfoot td:first-of-type, #thSalesTotal{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(255, 241, 215);
     background-color: rgb(32, 27, 62);
@@ -44,14 +44,14 @@ tfoot td:first-of-type, thead th:last-of-type{
     font-size: 1.25em;
 }
 
-tfoot td:last-of-type {
+#tfootSales td:last-of-type {
     color: rgb(255, 241, 215);
     background-color: rgb(32, 27, 62);
 }
 
-main{
+/* main{
     display: flex;
     justify-content: center;
     text-align: right;
-}
+} */
 
