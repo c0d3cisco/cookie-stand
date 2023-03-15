@@ -1,8 +1,8 @@
 # cookie-stand
 
-## Get to Know Me
+## Summary
 
-This is to help Pat keep count of her store
+This site is to help Pat simulate her cookies sales and employees needed per store to meet her demands.
 
 ### Author: Francisco Sanchez
 
@@ -13,6 +13,6 @@ This is to help Pat keep count of her store
 Lab6
 ![Screenshot of Lighthouse for Lab 06!](/screenshot/Lab06Screenshot.png "Screenshot of Lab06")
 
-### Reflections and Comments
+![Screenshot of Lighthouse for Lab 06!](/screenshot/Lab06Screenshot.png "Screenshot of Lab06")
 
-This was one busy day. Feel pretty good about it.
+### Reflections and Comments
