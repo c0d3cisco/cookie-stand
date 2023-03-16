@@ -1,19 +1,118 @@
-
 body{
     background-color: rgb(255, 225, 168);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(35, 78, 30);
+    font-size: 18px;
+}
+
+#bodyDiv, footer{
+    width: max(50%,1000px);
+    margin: 0 auto;
 }
 
 h1{
     font-family: 'Tilt Prism', cursive;
     font-size: 100px;
+    padding: 10px;
     color: rgb(255,255,255);
     background-color: rgb(27, 43, 62);
     border-radius: 25px;
     text-align: center;
 }
 
-table {
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    z-index: -1;
+}
+
+nav a{
+    color: rgb(255,255,255);
+    background-color: rgb(27, 43, 62);
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 15px 70px 20px 70px;
+    transition: 0.6s;
+}
+
+nav a:hover{
+    color: rgb(255,255,255);
+    text-shadow: 1px 1px 4px rgb(27, 43, 62);
+    background-color: rgba(27, 43, 62, 0.807);
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 15px 70px 25px 70px;
+}
+
+header img{
+width: 250px;
+}
+
+#imgSalmonID{
+    float: right;
+    -webkit-transform: scaleX(-1) rotate(-15deg);
+    /* transform: scaleX(-1); */
+    transition: 2s;
+}
+
+#imgSalmonID:hover{
+    -webkit-transform: scaleX(-1) rotate(20deg);
+    /* transform: scaleX(-1) rotate(-20deg); */
+}
+
+#imgChinookID{
+    rotate: 15deg;
+    transition: 2s;
+}
+
+#imgChinookID:hover{
+    rotate: -20deg;
+    /* transform: scaleX(-1) rotate(-20deg); */
+}
+
+#indexMain {
+    margin-top: 40px;
+    background-color: rgb(255, 246, 228);
+    border-radius: 10px
+}
+
+#heroSection{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#pMain {
     text-align: center;
+    padding: 20px 10px;
+}
+
+footer{
+    height: 70px;
+}
+
+h2, h3{
+    padding: 10px;
+}
+
+#storeCards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#storeCards section{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 th, td { 
@@ -26,9 +125,17 @@ th, td {
 
 }
 
-tfoot td{
+#tfootSales td{
     font-weight:bold;
+    border: 1px dotted rgb(255, 241, 215);
 }
+
+#tfootEmployee td{
+    font-weight:bold;
+    border-right: 1px dotted rgb(211, 211, 211);
+    border-left: 1px dotted rgb(211, 211, 211);
+}
+
 
 th, tbody td:first-of-type{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -36,12 +143,30 @@ th, tbody td:first-of-type{
     font-weight: bolder;
     color: rgb(44, 28, 65);
 }
-tfoot td:first-of-type, #thSalesTotal{
+
+tfoot td, #thSalesTotal{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(255, 241, 215);
     background-color: rgb(32, 27, 62);
     font-weight: bolder;
+    font-size: 1.15;
+}
+
+tfoot td:first-of-type{
+    border: 1px dotted rgb(255, 241, 215);
+}
+
+#thSalesTotal{
+    border-bottom: 1px dotted rgb(255, 241, 215);
+    border-right: 1px dotted rgb(255, 241, 215);
     font-size: 1.25em;
+}
+
+table:nth-of-type(1) td:last-of-type{
+    font-weight:bold;
+    color: rgb(255, 241, 215);
+    background-color: rgb(32, 27, 62);
+    border: 1px dotted rgb(255, 241, 215);
 }
 
 #tfootSales td:last-of-type {
@@ -49,9 +174,21 @@ tfoot td:first-of-type, #thSalesTotal{
     background-color: rgb(32, 27, 62);
 }
 
-/* main{
-    display: flex;
-    justify-content: center;
-    text-align: right;
-} */
+table {
+    text-align: center;
+    border: 1px dotted rgb(32, 27, 62);
 
+}
+
+table{
+    width: 200px;
+    height: 200px;
+}
+
+#tableSection{
+    height: 500px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
+}

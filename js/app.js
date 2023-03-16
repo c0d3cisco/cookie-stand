@@ -56,11 +56,8 @@ CitySales.prototype.hourlyListAndTotalPrint = function () {
     trEmployeeEl.appendChild(tdEmployeeEl);
     tdEmployeeEl.textContent = this.hourlyEmployee[i];
   }
-
-
-
-
 };
+
 let cityObjArr = [];
 cityObjArr[0] = new CitySales('Seattle', 23, 65, 6.3);
 cityObjArr[1] = new CitySales('Tokyo', 3, 24, 1.2);
