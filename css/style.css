@@ -10,6 +10,7 @@ body{
     margin: 0 auto;
 }
 
+
 h1{
     font-family: 'Tilt Prism', cursive;
     font-size: 100px;
@@ -102,18 +103,45 @@ h2, h3{
     padding: 10px;
 }
 
+h3{
+    font-size: 20px;
+}
+
 #storeCards{
+    position: relative;
+    left: 400px;
+    width: 600px;
     display: flex;
-    flex-direction: row;
+    flex-flow: wrap;
     justify-content: space-evenly;
 }
 
 #storeCards section{
     height: 100px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+    /* text-align: center; */
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgb(255, 225, 168);
+    border-radius: 30px 15px 35px 15px;
+    transition: 0.5s;
+    border-bottom: 1px solid rgb(255, 202, 104);
+    border-right: 1px solid rgb(255, 202, 104);
 }
+
+#storeCards section:hover{
+    border-bottom: 8px solid rgb(255, 202, 104);
+    border-right: 8px solid rgb(255, 202, 104);
+}
+
+h4 {
+    font-weight: bold;
+}
+
 
 th, td { 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -186,9 +214,10 @@ table{
 }
 
 #tableSection{
-    height: 500px;
+    height: 575px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
+
