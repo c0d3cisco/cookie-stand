@@ -1,0 +1,123 @@
+
+body{
+    background-color: rgb(255, 225, 168);
+}
+
+#bodyDive{
+    width: 1260px;
+    margin: 0 auto;
+}
+
+h1{
+    font-family: 'Tilt Prism', cursive;
+    font-size: 100px;
+    color: rgb(255,255,255);
+    background-color: rgb(27, 43, 62);
+    border-radius: 25px;
+    text-align: center;
+}
+
+
+
+th, td { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(35, 78, 30);
+    font-size: 12px;
+    padding: 3px;
+    background-color: rgb(255, 241, 215);
+    border: 1px dotted rgb(32, 27, 62);
+
+}
+
+#tfootSales td{
+    font-weight:bold;
+    border: 1px dotted rgb(255, 241, 215);
+}
+
+#tfootEmployee td{
+    font-weight:bold;
+    border-right: 1px dotted rgb(211, 211, 211);
+    border-left: 1px dotted rgb(211, 211, 211);
+}
+
+
+th, tbody td:first-of-type{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.15em;
+    font-weight: bolder;
+    color: rgb(44, 28, 65);
+}
+
+tfoot td, #thSalesTotal{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 241, 215);
+    background-color: rgb(32, 27, 62);
+    font-weight: bolder;
+    font-size: 1.15;
+}
+
+tfoot td:first-of-type{
+    border: 1px dotted rgb(255, 241, 215);
+}
+
+#thSalesTotal{
+    border-bottom: 1px dotted rgb(255, 241, 215);
+    border-right: 1px dotted rgb(255, 241, 215);
+    font-size: 1.25em;
+}
+
+table:nth-of-type(1) td:last-of-type{
+    font-weight:bold;
+    color: rgb(255, 241, 215);
+    background-color: rgb(32, 27, 62);
+    border: 1px dotted rgb(255, 241, 215);
+}
+
+#tfootSales td:last-of-type {
+    color: rgb(255, 241, 215);
+    background-color: rgb(32, 27, 62);
+}
+
+.row{
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex:1;
+    /* flex-direction: row;  */
+    /* layout for primary */
+    justify-content:space-evenly;
+/* layout for secondary */
+    align-items: center;
+    height: 200px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column; 
+    /* layout for primary */
+    justify-content:flex-end;  
+/* layout for secondary */
+    align-items: flex-end;
+    height: 200px;
+}
+
+.column, p{
+    border: 1px solid black;
+}
+table {
+    text-align: center;
+    border: 1px dotted rgb(32, 27, 62);
+
+}
+
+table{
+    width: 200px;
+    height: 200px;
+}
+
+#tableSection{
+    height: 500px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
+}

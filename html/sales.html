@@ -8,21 +8,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Pat's Salmon Cookies Sale Numbers</title>
 </head>
 
 <body>
     <header>
-        <h1>Pat's Salmon Cookies</h1>
+        <div id="bodyDiv">
+            <h1>
+                <img id="imgSalmonID" src="../img/salmon.png" alt="picture of mean looking salmon">
+                Pat's Salmon Cookies
+                <img id="imgChinookID" src="../img/chinook-PhotoRoom.png" alt="picture of mean looking chinook">
+            </h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/html/store.html">Pat's Shop</a></li>
+                <li><a href="https://www.google.com/">Save the Salmon</a></li>
+                <li><a href="/index.html">Home</a></li>
             </ul>
         </nav>
+        </div>
     </header>
     <main>
+        <section id="tableSection">
         <table>
             <thead>
                 <tr>
@@ -71,10 +80,11 @@
             <tbody id="tbodyEmployee"></tbody>
             <tfoot id="tfootEmployee"></tfoot>
         </table>
+        </section>
     </main>
     <footer>
     </footer>
 </body>
-<script src="js/app.js"></script>
+<script src="../js/app.js"></script>
 
 </html>
