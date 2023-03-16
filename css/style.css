@@ -139,7 +139,7 @@ th, td {
 
 th, tbody td:first-of-type{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.15em;
+    font-size: .91em;
     font-weight: bolder;
     color: rgb(44, 28, 65);
 }
@@ -159,7 +159,7 @@ tfoot td:first-of-type{
 #thSalesTotal{
     border-bottom: 1px dotted rgb(255, 241, 215);
     border-right: 1px dotted rgb(255, 241, 215);
-    font-size: 1.25em;
+    font-size: 1.15em;
 }
 
 table:nth-of-type(1) td:last-of-type{
