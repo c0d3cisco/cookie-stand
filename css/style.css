@@ -5,10 +5,11 @@ body{
     font-size: 18px;
 }
 
-#bodyDiv, footer{
+#saleMain, #bodyDiv, footer{
     width: max(50%,1000px);
     margin: 0 auto;
 }
+
 
 
 h1{
@@ -83,6 +84,12 @@ width: 250px;
     border-radius: 10px
 }
 
+#storeMain{
+    width: 10;
+}
+
+
+
 #heroSection{
     display: flex;
     flex-direction: column;
@@ -109,7 +116,6 @@ h3{
 
 #storeCards{
     position: relative;
-    left: 400px;
     width: 600px;
     display: flex;
     flex-flow: wrap;
@@ -205,8 +211,8 @@ table:nth-of-type(1) td:last-of-type{
 table {
     text-align: center;
     border: 1px dotted rgb(32, 27, 62);
-
 }
+
 
 table{
     width: 200px;
@@ -214,10 +220,57 @@ table{
 }
 
 #tableSection{
-    height: 575px;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
 }
 
+form{
+    margin: 30px 0px;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+}
+
+fieldset div{
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
+}
+
+.schoolFish{
+    position: relative;
+}
+
+.schoolFish1{
+    position: absolute;
+    width: 50px;
+    bottom: 40px;
+    left: 155px;
+}
+
+#visitSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.lowerSection{
+    width: max(50%,250px);
+}
+
+p>img{
+    width:150px;
+}

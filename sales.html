@@ -30,7 +30,30 @@
         </nav>
         </div>
     </header>
-    <main>
+    <main id="saleMain">
+        <form id="formInput">
+            <fieldset>
+                <legend>Enter a new City or type the same city EXACTLY (for now) to update values</legend>
+                <div>
+                    <label for="city-input">City</label>
+                    <input type="text" placeholder="City" id="city-input" name="identifierCityName">
+                </div>
+                <div>
+                    <label for="minNum-input">Min per hour</label>
+                    <input type="number" placeholder="" id="minNum-input" name="identifierMinNum">
+                </div>
+                <div>
+                    <label for="maxNum-input">Max per hour</label>
+                    <input type="number" placeholder="" id="maxNum-input" name="identifierMaxNum">
+                </div>
+                <div>
+                    <label for="avgCust-input">Average Cookie Sale per Hour</label>
+                    <input type="number" placeholder="" id="avgCust-input" name="identifierAvgCus">
+                </div>
+                    <!-- <button onclick="click()">Submit</button> -->
+                    <button>Click Me</button>
+            </fieldset>
+        </form>
         <section id="tableSection">
         <table>
             <thead>
