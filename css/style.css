@@ -5,10 +5,12 @@ body{
     font-size: 18px;
 }
 
-#bodyDiv, footer{
+#saleMain, #bodyDiv, footer{
     width: max(50%,1000px);
     margin: 0 auto;
 }
+
+
 
 h1{
     font-family: 'Tilt Prism', cursive;
@@ -82,6 +84,12 @@ width: 250px;
     border-radius: 10px
 }
 
+#storeMain{
+    width: 10;
+}
+
+
+
 #heroSection{
     display: flex;
     flex-direction: column;
@@ -102,18 +110,44 @@ h2, h3{
     padding: 10px;
 }
 
+h3{
+    font-size: 20px;
+}
+
 #storeCards{
+    position: relative;
+    width: 600px;
     display: flex;
-    flex-direction: row;
+    flex-flow: wrap;
     justify-content: space-evenly;
 }
 
 #storeCards section{
     height: 100px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+    /* text-align: center; */
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgb(255, 225, 168);
+    border-radius: 30px 15px 35px 15px;
+    transition: 0.5s;
+    border-bottom: 1px solid rgb(255, 202, 104);
+    border-right: 1px solid rgb(255, 202, 104);
 }
+
+#storeCards section:hover{
+    border-bottom: 8px solid rgb(255, 202, 104);
+    border-right: 8px solid rgb(255, 202, 104);
+}
+
+h4 {
+    font-weight: bold;
+}
+
 
 th, td { 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -139,7 +173,7 @@ th, td {
 
 th, tbody td:first-of-type{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.15em;
+    font-size: .91em;
     font-weight: bolder;
     color: rgb(44, 28, 65);
 }
@@ -159,7 +193,7 @@ tfoot td:first-of-type{
 #thSalesTotal{
     border-bottom: 1px dotted rgb(255, 241, 215);
     border-right: 1px dotted rgb(255, 241, 215);
-    font-size: 1.25em;
+    font-size: 1.15em;
 }
 
 table:nth-of-type(1) td:last-of-type{
@@ -177,8 +211,8 @@ table:nth-of-type(1) td:last-of-type{
 table {
     text-align: center;
     border: 1px dotted rgb(32, 27, 62);
-
 }
+
 
 table{
     width: 200px;
@@ -186,9 +220,57 @@ table{
 }
 
 #tableSection{
-    height: 500px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+}
+
+form{
+    margin: 30px 0px;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: space-around;
+}
+
+fieldset div{
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
+}
+
+.schoolFish{
+    position: relative;
+}
+
+.schoolFish1{
+    position: absolute;
+    width: 50px;
+    bottom: 40px;
+    left: 155px;
+}
+
+#visitSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.lowerSection{
+    width: max(50%,250px);
+}
+
+p>img{
+    width:150px;
 }
