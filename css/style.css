@@ -116,7 +116,7 @@ h3{
 
 #storeCards{
     position: relative;
-    width: 600px;
+    width: 50%;
     display: flex;
     flex-flow: wrap;
     justify-content: space-evenly;
@@ -124,7 +124,7 @@ h3{
 
 #storeCards section{
     height: 100px;
-    width: 200px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -273,4 +273,57 @@ align-items: center;
 
 p>img{
     width:150px;
+}
+
+.saleParagraph{
+    width: 100%;
+    text-align: center;
+}
+
+/* #leftLower{
+display: flex;
+flex-flow: column;
+justify-content: center;
+} */
+
+
+#frostedCookie, #shirt, #cutter  {
+width: 150px;
+margin-left: 30px;
+}
+
+/* #frostedCookie, #shirt  {
+    float: left;
+}
+
+#cutter  {
+    float: right;
+} */
+
+form{
+background-color: rgb(255, 246, 228);
+padding: 25px;
+border-radius: 20px;
+width: 1050px;
+}
+
+legend{
+    border-bottom: 4px double rgb(35, 78, 30);
+    font-weight: bolder;
+}
+
+label{
+    text-align: center;
+    width: 100px;
+}
+
+#saleMain{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    
 }
