@@ -17,5 +17,7 @@ Lab6
 
 ![Screenshot of Lighthouse for Lab 09!](/screenshot/Lab09Screenshot.png "Screenshot of Lab09")
 
+![Screenshot of Lighthouse for Lab 10!](/screenshot/Lab10Screenshot.png "Screenshot of Lab10")
+
 ### Reflections and Comments
 
