@@ -144,7 +144,7 @@ formEl.addEventListener('submit', function(e){
   let repeatCity = 0;
   cityObjArr.forEach(cityObj => { //will check all city arrays to imput
     console.log(cityObj.cityName);
-    if(cityObj.cityName === identifierCityName.value){ //if name matches, repeat
+    if(cityObj.cityName === identifierCityName.value){ //if name matches, its a repeat
       console.log(cityObj.cityName);
       x=1;
       repeatCity = iterator;
@@ -174,12 +174,20 @@ formEl.addEventListener('submit', function(e){
 function eraseRow(cityObj,iterator){
   cityObj[iterator].hourlyCookieAndEmployee();
   let hourlySaleList = cityObj[iterator].hourlySaleList;
+  let hourlyEmployee = cityObj[iterator].hourlyEmployee;
   // let rowExcess = (cityObj.length-1)-iterator;
-  let capturedRow = document.querySelector(`#tbodySales tr:nth-of-type(${iterator+1})`);
-  capturedRow.innerHTML = '';
+  let capturedRowSales = document.querySelector(`#tbodySales tr:nth-of-type(${iterator+1})`);
+  let capturedRowEmploy = document.querySelector(`#tbodyEmployee tr:nth-of-type(${iterator+1})`);
+  capturedRowSales.innerHTML = '';
+  capturedRowEmploy.innerHTML = '';
   hourlySaleList.forEach(listItem => {
     const editedData = document.createElement('td');
     editedData.textContent = listItem;
-    capturedRow.appendChild(editedData);
+    capturedRowSales.appendChild(editedData);
+  });
+  hourlyEmployee.forEach(listItem => {
+    const editedData = document.createElement('td');
+    editedData.textContent = listItem;
+    capturedRowEmploy.appendChild(editedData);
   });
 }
