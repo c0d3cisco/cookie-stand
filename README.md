@@ -20,4 +20,3 @@ Lab6
 ![Screenshot of Lighthouse for Lab 10!](/screenshot/Lab10Screenshot.png "Screenshot of Lab10")
 
 ### Reflections and Comments
-

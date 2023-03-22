@@ -292,13 +292,13 @@ width: 150px;
 margin-left: 30px;
 }
 
-/* #frostedCookie, #shirt  {
+#frostedCookie, #shirt  {
     float: left;
 }
 
 #cutter  {
     float: right;
-} */
+}
 
 form{
 background-color: rgb(255, 246, 228);
@@ -324,6 +324,12 @@ label{
     align-items: center;
 }
 
-button{
-    
+#leftLower div{
+    height: 150px;
+    text-align: center;
+    background-color: rgb(255, 225, 168);
+    margin: 5px;
+    padding: 0px 20px;
+    border-radius: 30px;
+
 }
